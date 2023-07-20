@@ -70,8 +70,11 @@ export default function (__dirname, file, output, options) {
         if (options.external) {
           textures = await new Promise((resolve, reject) => {
             //call the python script to externalize the textures
-            exec(`python ${__dirname}\\src\\bin\\textureExtractor.py ${file}`, (error, stdout, stderr) => {
-              if (error) reject(error)
+            exec(`python3 ${__dirname}/src/bin/textureExtractor.py ${file}`, (error, stdout, stderr) => {
+              if (error) {
+                console.log(error)
+                reject(error)
+              }
               resolve(JSON.parse(stdout))
             })
           })

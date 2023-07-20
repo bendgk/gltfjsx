@@ -24,29 +24,6 @@ function parse(gltf, { fileName = 'model', ...options } = {}) {
 
       const name = value.name
 
-      const properties = [
-        "color", "roughness", "metalness", "map", "lightMap", "lightMapIntensity",
-        "aoMap", "aoMapIntensity", "emissive", "emissiveIntensity", "emissiveMap",
-        "bumpMap", "bumpScale", "normalMap", "normalMapType", "normalScale",
-        "displacementMap", "displacementScale", "displacementBias", "roughnessMap",
-        "metalnessMap", "alphaMap", "envMap", "envMapIntensity", "wireframe",
-        "wireframeLinewidth", "fog", "flatShading"
-      ]
-
-      //iterate the properties of the value object and delete any that are not in the properties array
-      Object.keys(value).forEach((key) => {
-        if (!properties.includes(key)) {
-          delete value[key]
-        }
-      })
-
-      //clean up any null values
-      Object.keys(value).forEach((key) => {
-        if (value[key] === null || value[key] === undefined) {
-          delete value[key]
-        }
-      })
-
       if (idx) {
         materials[name] = {...value, map: `Texture${idx}`}
       } else {
@@ -59,6 +36,30 @@ function parse(gltf, { fileName = 'model', ...options } = {}) {
     const matList = []
     Object.keys(materials).forEach((key) => {
       const mat = { ...materials[key] }
+
+      const properties = [
+        "color", "roughness", "metalness", "map", "lightMap", "lightMapIntensity",
+        "aoMap", "aoMapIntensity", "emissive", "emissiveIntensity", "emissiveMap",
+        "bumpMap", "bumpScale", "normalMap", "normalMapType", "normalScale",
+        "displacementMap", "displacementScale", "displacementBias", "roughnessMap",
+        "metalnessMap", "alphaMap", "envMap", "envMapIntensity", "wireframe",
+        "wireframeLinewidth", "fog", "flatShading"
+      ]
+
+      //iterate the properties of the value object and delete any that are not in the properties array
+      Object.keys(mat).forEach((key) => {
+        if (!properties.includes(key)) {
+          delete mat[key]
+        }
+      })
+
+      //clean up any null values
+      Object.keys(mat).forEach((key) => {
+        if (mat[key] === null || mat[key] === undefined) {
+          delete mat[key]
+        }
+      })
+
       matList.push(`"${key}": new MeshStandardMaterial(${JSON.stringify(mat)})`)
     })
 

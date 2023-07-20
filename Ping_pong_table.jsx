@@ -10,29 +10,29 @@ Title: Ping Pong Table
 import React, { useRef } from 'react'
 
 import modelPath from './ping_pong_table.glb'
-import Image0 from './textures/0.png'
-import Image1 from './textures/1.jpg'
-import Image2 from './textures/2.jpg'
-import Image3 from './textures/3.png'
 import Image4 from './textures/4.jpg'
 import Image5 from './textures/5.jpg'
 import Image6 from './textures/6.png'
+import Image2 from './textures/2.jpg'
+import Image3 from './textures/3.png'
+import Image1 from './textures/1.jpg'
+import Image0 from './textures/0.png'
 import { MeshStandardMaterial } from 'three'
 import { useGLTF, useTexture } from '@react-three/drei'
 
 export function Model(props) {
   const { nodes } = useGLTF(modelPath)
-  const [Texture0, Texture1, Texture2, Texture3, Texture4, Texture5, Texture6] = useTexture([Image0, Image1, Image2, Image3, Image4, Image5, Image6])
+  const [Texture4, Texture5, Texture6, Texture2, Texture3, Texture1, Texture0] = useTexture([Image4, Image5, Image6, Image2, Image3, Image1, Image0])
 
   const materials = {
     green: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
-    aluminum: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture1 }),
-    plastic: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture2 }),
-    grey: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture3 }),
-    fabric: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture4 }),
-    yellow: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture5 }),
+    aluminum: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture1, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
+    plastic: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture2, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
+    grey: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture3, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
+    fabric: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture4, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
+    yellow: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture5, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
     paddle_ping_pong: new MeshStandardMaterial({ color: 16777215, roughness: 0.6, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
-    material: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true, map: Texture6 }),
+    material: new MeshStandardMaterial({ color: 16777215, roughness: 0.8929713596497552, metalness: 0, map: Texture6, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: 1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
     caucho_rojo_p: new MeshStandardMaterial({ color: 16777215, roughness: 0.6, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
     caucho_negro_p: new MeshStandardMaterial({ color: 16777215, roughness: 0.6, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
     paddle_ping_pong_0: new MeshStandardMaterial({ color: 16777215, roughness: 0.6, metalness: 0, lightMapIntensity: 1, aoMapIntensity: 1, emissive: 0, emissiveIntensity: 1, bumpScale: 1, normalMapType: 0, normalScale: { x: 1, y: -1 }, displacementScale: 1, displacementBias: 0, envMapIntensity: 1, wireframe: false, wireframeLinewidth: 1, flatShading: false, fog: true }),
@@ -44,46 +44,46 @@ export function Model(props) {
     <group {...props} dispose={null}>
       <group scale={0.01}>
         <group position={[103.94, 76.989, 39.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48}>
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_grey_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_grey_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_paddle_ping_pong_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_paddle_ping_pong_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_red_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_red_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_rojo_p_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_rojo_p_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_negro_p_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_negro_p_0.material} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_grey_0.geometry} material={materials.grey} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_paddle_ping_pong_0.geometry} material={materials.paddle_ping_pong} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_red_0.geometry} material={materials.material} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_rojo_p_0.geometry} material={materials.caucho_rojo_p} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828_caucho_negro_p_0.geometry} material={materials.caucho_negro_p} />
         </group>
         <group position={[-96.679, 76.989, -18.632]} rotation={[-Math.PI / 2, 0, -1.079]} scale={30.48}>
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_grey_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_grey_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_paddle_ping_pong_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_paddle_ping_pong_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_red_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_red_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_rojo_p_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_rojo_p_0.material} />
-          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_negro_p_0.geometry} material={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_negro_p_0.material} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_grey_0.geometry} material={materials.grey} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_paddle_ping_pong_0.geometry} material={materials.paddle_ping_pong_0} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_red_0.geometry} material={materials.material} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_rojo_p_0.geometry} material={materials.caucho_rojo_p_0} />
+          <mesh geometry={nodes.Ping_Pong_Racket_Ping_Pong_Racket_5828001_caucho_negro_p_0.geometry} material={materials.caucho_negro_p_0} />
         </group>
-        <mesh geometry={nodes._Extrusion_1914_green_0.geometry} material={nodes._Extrusion_1914_green_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2017_green_0.geometry} material={nodes._Extrusion_2017_green_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2118_aluminum_0.geometry} material={nodes._Extrusion_2118_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2152_plastic_0.geometry} material={nodes._Extrusion_2152_plastic_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2221_aluminum_0.geometry} material={nodes._Extrusion_2221_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2225_plastic_0.geometry} material={nodes._Extrusion_2225_plastic_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2241_aluminum_0.geometry} material={nodes._Extrusion_2241_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2245_plastic_0.geometry} material={nodes._Extrusion_2245_plastic_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2249_aluminum_0.geometry} material={nodes._Extrusion_2249_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2253_plastic_0.geometry} material={nodes._Extrusion_2253_plastic_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2257_aluminum_0.geometry} material={nodes._Extrusion_2257_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2314_aluminum_0.geometry} material={nodes._Extrusion_2314_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2350_aluminum_0.geometry} material={nodes._Extrusion_2350_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2485_aluminum_0.geometry} material={nodes._Extrusion_2485_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2508_aluminum_0.geometry} material={nodes._Extrusion_2508_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2526_aluminum_0.geometry} material={nodes._Extrusion_2526_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2539_aluminum_0.geometry} material={nodes._Extrusion_2539_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2543_aluminum_0.geometry} material={nodes._Extrusion_2543_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_2589_grey_0.geometry} material={nodes._Extrusion_2589_grey_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_3348_grey_0.geometry} material={nodes._Extrusion_3348_grey_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_3384_aluminum_0.geometry} material={nodes._Extrusion_3384_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_3768_aluminum_0.geometry} material={nodes._Extrusion_3768_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_3792_aluminum_0.geometry} material={nodes._Extrusion_3792_aluminum_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Extrusion_3849_fabric_0.geometry} material={nodes._Extrusion_3849_fabric_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Revolve_4284_yellow_0.geometry} material={nodes._Revolve_4284_yellow_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Revolve_4298_yellow_0.geometry} material={nodes._Revolve_4298_yellow_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
-        <mesh geometry={nodes._Revolve_4310_yellow_0.geometry} material={nodes._Revolve_4310_yellow_0.material} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_1914_green_0.geometry} material={materials.green} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2017_green_0.geometry} material={materials.green} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2118_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2152_plastic_0.geometry} material={materials.plastic} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2221_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2225_plastic_0.geometry} material={materials.plastic} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2241_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2245_plastic_0.geometry} material={materials.plastic} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2249_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2253_plastic_0.geometry} material={materials.plastic} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2257_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2314_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2350_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2485_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2508_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2526_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2539_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2543_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_2589_grey_0.geometry} material={materials.grey} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_3348_grey_0.geometry} material={materials.grey} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_3384_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_3768_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_3792_aluminum_0.geometry} material={materials.aluminum} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Extrusion_3849_fabric_0.geometry} material={materials.fabric} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Revolve_4284_yellow_0.geometry} material={materials.yellow} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Revolve_4298_yellow_0.geometry} material={materials.yellow} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
+        <mesh geometry={nodes._Revolve_4310_yellow_0.geometry} material={materials.yellow} position={[2.94, 0, 8.431]} rotation={[-Math.PI / 2, 0, 0]} scale={30.48} />
       </group>
     </group>
   )
