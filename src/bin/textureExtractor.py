@@ -16,6 +16,8 @@ def main():
     # create textures folder
     if not os.path.exists("textures"):
         os.makedirs("textures")
+
+        #extract the images from the glb file and save them to the textures folder
         glb.convert_images(ImageFormat.FILE, "textures/")
 
     # for each texture in the textures folder append the filename and mimetype to an array
