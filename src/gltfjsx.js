@@ -7,6 +7,7 @@ import { GLTFLoader } from './bin/GLTFLoader.js'
 import { DRACOLoader } from './bin/DRACOLoader.js'
 DRACOLoader.getDecoderModule = () => {}
 import parse from './utils/parser.js'
+import { exec } from "child_process"
 
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(new DRACOLoader())
@@ -33,7 +34,7 @@ function getFileSize(file) {
   }
 }
 
-export default function (file, output, options) {
+export default function (__dirname, file, output, options) {
   function getRelativeFilePath(file) {
     const filePath = path.resolve(file)
     const rootPath = options.root ? path.resolve(options.root) : path.dirname(file)
@@ -63,6 +64,19 @@ export default function (file, output, options) {
         }
         resolve()
 
+        let textures = []
+
+        //externalize textures for react-native workaround
+        if (options.external) {
+          textures = await new Promise((resolve, reject) => {
+            //call the python script to externalize the textures
+            exec(`python ${__dirname}\\src\\bin\\textureExtractor.py ${file}`, (error, stdout, stderr) => {
+              if (error) reject(error)
+              resolve(JSON.parse(stdout))
+            })
+          })
+        }
+
         const filePath = getRelativeFilePath(file)
         const data = fs.readFileSync(file)
         const arrayBuffer = toArrayBuffer(data)
@@ -70,7 +84,7 @@ export default function (file, output, options) {
           arrayBuffer,
           '',
           (gltf) => {
-            stream.write(parse(gltf, { fileName: filePath, size, ...options }))
+            stream.write(parse(gltf, { fileName: filePath, size, textures, ...options }))
             stream.end()
             resolve()
           },

@@ -38,6 +38,7 @@ const cli = meow(
         --ratio         Simplifier ratio (default: 0)
         --error         Simplifier error threshold (default: 0.0001)
     --debug, -D         Debug output
+    --external, -e      Externalize the textures (react-native workaround)
 `,
   {
     importMeta: import.meta,
@@ -66,6 +67,7 @@ const cli = meow(
       ratio: { type: 'number', default: 0.75 },
       error: { type: 'number', default: 0.001 },
       debug: { type: 'boolean', shortFlag: 'D' },
+      external: {type: 'boolean', shortFlag: 'e'}
     },
   }
 )
@@ -88,7 +90,7 @@ Command: npx gltfjsx@${packageJson.version} ${process.argv.slice(2).join(' ')}`,
     console.info('log:', log)
   }
   try {
-    const response = await gltfjsx(file, output, { ...config, showLog, timeout: 0, delay: 1 })
+    const response = await gltfjsx(__dirname, file, output, { ...config, showLog, timeout: 0, delay: 1 })
   } catch (e) {
     console.error(e)
   }
